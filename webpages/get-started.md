@@ -20,11 +20,9 @@ For those who are more hands-on.
 ## Community  
 ---
 [Developer Forum][4]   
-Applied Energy '18     
-   
+
 [GitHub Issues][5]   
-BuildSys 2016   
-   
+
 [1]: https://brickschema.org/docs/Brick-Leaflet.pdf
 [2]: https://docs.google.com/presentation/d/1wgT5S8fgo13cqDPx7DbygWuqAhIp4uxAenP4oDsMaVI/edit?usp=sharing  
 [3]: https://github.com/BuildSysUniformMetadata/brick-tutorial-buildsys2017
