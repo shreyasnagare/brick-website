@@ -24,8 +24,10 @@ This will start a local development server. The server will start at http://loca
 
 ```sh
 cd brick-website
-npm run build
+node --max_old_space_size=4096 node_modules/@gridsome/cli/bin/gridsome.js build
 ```
+The `--max_old_space_size=4096` argument allows the node process to use more memory (4 GBs in this case).
+
 This will generate static files in the `./dist` directory which can be hosted anywhere, even on a CDN. There is no need for a Node.js server.
  
 ## Built With
