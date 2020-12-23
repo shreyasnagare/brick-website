@@ -1,0 +1,30 @@
+name: Build
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: A job to test live preview
+    steps:
+      - uses: actions/checkout@v2
+        name: Checkout
+      - uses: actions/setup-node@v2
+        name: Setup node
+        with:
+          node-version: '12'
+      - run: npm install
+        name: Install dependencies
+      - run: npm run build
+        name: Build the website
+      - run: npm install link-checker && node_modules/.bin/link-checker dist
+      - name: Setup Live Preview
+        uses: sharadcodes/live-preview-action@v1.0
+        with:
+          port: 5000 # A required field, this port will be exposed
+          minutes: 10 # A required field, after the minutes specified here the server will stop
+          command: "cd dist && python3 -m http.server 5000"
